@@ -1,0 +1,19 @@
+- name: install and config mysql
+  hosts: db
+  roles: 
+    - role: 'roles/sql'
+
+- name: install ftp
+  hosts: db
+  roles: 
+    - role: 'roles/ftp'
+
+- name: install and config Apache and PhP
+  hosts: web
+  roles: 
+    - role: 'roles/ApachePhp'
+
+- name: install and configure wp
+  hosts: web
+  roles: 
+    - role: 'roles/wordpress'
